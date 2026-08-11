@@ -5,7 +5,7 @@
    ========================================================= */
 window.MMP = {
   // Airbnb listing URL for "Book" buttons. Until set, book buttons fall back to the Contact page.
-  booking: "",                          // e.g. "https://www.airbnb.com/rooms/XXXXXXXX"
+  booking: "https://www.airbnb.com/rooms/1602349400329637350",  // Airbnb listing
   email:   "stay@staymackmountain.com", // <-- replace with your real email
   phone:   "",                          // e.g. "+1 (555) 123-4567"  (leave blank to hide)
   instagram: "",                        // e.g. "https://instagram.com/yourhandle"
