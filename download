@@ -1,0 +1,12 @@
+# macOS / Windows junk
+.DS_Store
+Thumbs.db
+
+# Editor folders
+.vscode/
+.idea/
+
+# Dependencies / build artifacts (in case tooling is added later)
+node_modules/
+dist/
+.netlify/
