@@ -4,12 +4,12 @@
    EDIT THIS CONFIG to update links everywhere at once.
    ========================================================= */
 window.MMP = {
-  // Airbnb listing URL for "Book" buttons. Until set, book buttons fall back to the Contact page.
-  booking: "https://www.airbnb.com/rooms/1602349400329637350",  // Airbnb listing
-  email:   "stay@staymackmountain.com", // <-- replace with your real email
-  phone:   "",                          // e.g. "+1 (555) 123-4567"  (leave blank to hide)
-  instagram: "",                        // e.g. "https://instagram.com/yourhandle"
-  facebook:  "",                        // e.g. "https://facebook.com/yourpage"
+  // "Book" buttons point here. Internal page (book.html) hosts the Guesty booking widget; OTA links live on the Book/Contact pages.
+  booking: "book.html",
+  email:   "stay@staymackmountain.com",
+  phone:   "",
+  instagram: "",
+  facebook:  "",
 };
 
 (function () {
@@ -17,8 +17,10 @@ window.MMP = {
 
   // ---- Wire booking links ----
   document.querySelectorAll(".js-book").forEach(function (a) {
-    if (cfg.booking) { a.setAttribute("href", cfg.booking); a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
-    else { a.setAttribute("href", "contact.html"); }
+    var url = cfg.booking || "contact.html";
+    a.setAttribute("href", url);
+    if (/^https?:/i.test(url)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+    else { a.removeAttribute("target"); a.removeAttribute("rel"); }
   });
 
   // ---- Wire email / phone ----
